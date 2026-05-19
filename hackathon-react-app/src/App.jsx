@@ -7,6 +7,12 @@ import Register from './Pages/Register'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [token, setToken] = useState(null);
+
+  useEffect(() => {
+    const localToken = localStorage.getItem('token');
+    setToken(localToken);
+  }, []);
 
   const navigate = useNavigate();
 
@@ -16,11 +22,21 @@ function App() {
 
   return (
    <div>
+    {token ? (
+      <>
       <nav>
         <Link to="/events">
           View Upcoming Events
         </Link>
-      </nav>
+      </nav>      
+      </>
+    ) : (
+      <>
+        <Link to="/login">Login here!</Link>
+        <Link to="/register">Register here!</Link>
+      </>
+    )}
+
 
     
     <Routes>
