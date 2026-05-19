@@ -10,6 +10,7 @@ import CreateSocietyPage from './Pages/CreateSocietyPage'
 import Login from './Pages/Login'
 import Profile from './Pages/Profile'
 import Register from './Pages/Register'
+import CreateSocietyEvent from './Pages/CreateSocietyEvent'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -73,7 +74,7 @@ function App() {
         <Box>
           <AppBar position='static'>
             <Toolbar sx={{ display: "flex", justifyContent: "left", gap: 5}}>
-              <Link to="/login">Create an event for your society!</Link>
+              <Link to="/createsocietyevent">Create an event for your society!</Link>
             </Toolbar>
           </AppBar>
           
@@ -91,6 +92,7 @@ function App() {
                     element={<EventListings />}
                 />
                 <Route path="/createsocietypage" element={<CreateSocietyPage setSocietyCreated={setSocietyCreated}/>}/>
+                <Route path="/createsocietyevent" element={<CreateSocietyEvent/>}/>
                 <Route path="/profile/:id" element={<Profile />} />
 
             </Routes>
