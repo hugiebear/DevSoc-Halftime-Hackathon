@@ -1,14 +1,32 @@
 import React, { useState } from 'react';
 import styles from '../Styles/Login.module.css';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 function Login({ successCallback }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const login = async () => {
-    successCallback();
+  const login = async (e) => {
+    e.preventDefault();
+    setError('');
+
+    try {
+      const response = await axios.post("http://localhost:5000/auth/login", {
+        email,
+        password,
+      });
+      const token = response.data.token;
+      successCallback(token);
+    } catch (err) {
+      if (axios.isAxiosError(err)) {
+        setError(err.response?.data?.error || "Failed to Login");
+      } else {
+        setError("Failed to Login");
+      }
+      alert("error");
+    }
   };
 
   return (

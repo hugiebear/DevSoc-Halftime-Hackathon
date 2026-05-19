@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState } from "react";
 import styles from "../Styles/Login.module.css";
 import { Link } from "react-router-dom";
@@ -7,9 +8,34 @@ function Register({ successCallback }) {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [name, setName] = useState("");
+	const [error, setError] = useState('');
 
-  const register = () => {
-    successCallback();
+  const register = async (e) => {
+    e.preventDefault();
+
+    if (password !== confirmPassword) { 
+      setError('Passwords must match');
+			alert("pw error")
+      return;
+    }
+		console.log("hello")
+    try {
+			console.log("trying to connect")
+      const response = await axios.post("http://localhost:5000/auth/register", {
+        email,
+        password,
+        name,
+      });
+      const token = response.data.token;
+      successCallback(token);
+    } catch (err) {
+      if (axios.isAxiosError(err)) {
+        setError(err.response?.data?.error || "Failed to register");
+      } else {
+        setError("Failed to register");
+      }
+			alert("Failed to register");
+    }
   };
 
   return (
