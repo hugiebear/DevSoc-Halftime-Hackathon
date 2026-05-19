@@ -8,6 +8,7 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
+import CreateSocietyPage from './Pages/CreateSocietyPage'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -32,9 +33,8 @@ function App() {
         <Box>
           <AppBar position='static'>
             <Toolbar sx={{ display: "flex", justifyContent: "left", gap: 5}}>
-              <Link to="/events">
-                View Upcoming Events
-              </Link>
+              <Link to="/events">View Upcoming Events</Link>
+              <Link to="/createsocietypage">Create a page for your society!</Link>
 
               <Button sx={{ ml: "auto"}} variant="contained" color="error">
                 Logout
@@ -65,6 +65,7 @@ function App() {
         path="/events"
         element={<EventListings/>}
       />
+      <Route path="/createsocietypage" element={<CreateSocietyPage/>}/>
       
     </Routes>
    </div>
