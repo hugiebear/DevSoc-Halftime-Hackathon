@@ -1,22 +1,28 @@
 import { useState, useEffect } from 'react'
 import { Routes, Route, Link, Navigate, useNavigate} from "react-router-dom"
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 import './App.css'
+import EventListings from './EventListings'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
    <div>
-    Test
-      <div>
+      <nav>
         <Link to="/events">
-          View Upcomming Events
+          View Upcoming Events
         </Link>
-      </div>
+      </nav>
+
+    
+    <Routes>
+      <Route
+        path="/events"
+        element={<EventListings/>}
+      />
+    </Routes>
    </div>
+   
   )
 }
 
