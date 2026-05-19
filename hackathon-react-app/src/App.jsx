@@ -13,6 +13,8 @@ import CreateSocietyPage from './Pages/CreateSocietyPage'
 function App() {
   const [count, setCount] = useState(0)
   const [token, setToken] = useState(null);
+  const [societyCreated, setSocietyCreated] = useState(false);
+
 
   useEffect(() => {
     const localToken = localStorage.getItem('token');
@@ -64,6 +66,19 @@ function App() {
       </Box>
     )}
 
+    {
+      societyCreated && (
+        <Box>
+          <AppBar position='static'>
+            <Toolbar sx={{ display: "flex", justifyContent: "left", gap: 5}}>
+              <Link to="/login">Create an event for your society!</Link>
+            </Toolbar>
+          </AppBar>
+          
+        </Box>
+      )
+    }
+
 
     
     <Routes>
@@ -73,7 +88,7 @@ function App() {
         path="/events"
         element={<EventListings/>}
       />
-      <Route path="/createsocietypage" element={<CreateSocietyPage/>}/>
+      <Route path="/createsocietypage" element={<CreateSocietyPage setSocietyCreated={setSocietyCreated}/>}/>
       
     </Routes>
    </div>
