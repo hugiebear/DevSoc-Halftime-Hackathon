@@ -38,48 +38,48 @@ function ViewSocietyPage() {
         <>
             <Box  sx={{ display: "flex", flexDirection: "column", alignItems: "center", mt: 5}}>
                 <div>
-                    <p>Software Development Society</p>
-  {sampleEvents.map((event) => (
-          <article key={event.id} className={styles.card}>
-            <div className={styles.cardHeader}>
-              <div className={styles.clubAvatar}>
-                {event.organiser.charAt(0)}
-              </div>
+                    <p>Software Development Society</p> <p>Followers: 67</p>
+                    {sampleEvents.map((event) => (
+                            <article key={event.id} className={styles.card}>
+                                <div className={styles.cardHeader}>
+                                <div className={styles.clubAvatar}>
+                                    {event.organiser.charAt(0)}
+                                </div>
 
-              <div>
-                <h3>{event.organiser}</h3>
-                <p>
-                  {event.date} at {event.time}
-                </p>
-              </div>
-            </div>
+                                <div>
+                                    <h3>{event.organiser}</h3>
+                                    <p>
+                                    {event.date} at {event.time}
+                                    </p>
+                                </div>
+                                </div>
 
-            <div className={styles.category}>{event.category}</div>
+                                <div className={styles.category}>{event.category}</div>
 
-            <h2>{event.title}</h2>
+                                <h2>{event.title}</h2>
 
-            <p className={styles.description}>{event.description}</p>
+                                <p className={styles.description}>{event.description}</p>
 
-            <p className={styles.location}>📍 {event.location}</p>
+                                <p className={styles.location}>📍 {event.location}</p>
 
-            <img
-              className={styles.image}
-              src={event.image}
-              alt={event.title}
-            />
+                                <img
+                                className={styles.image}
+                                src={event.image}
+                                alt={event.title}
+                                />
 
-            <div className={styles.stats}>
-              <span>{event.likes} likes</span>
-              <span>{event.interested} interested</span>
-            </div>
+                                <div className={styles.stats}>
+                                <span>{event.likes} likes</span>
+                                <span>{event.interested} interested</span>
+                                </div>
 
-            <div className={styles.actions}>
-              <button>👍 Like</button>
-              <button>⭐ Interested</button>
-              <button>↗ Share</button>
-            </div>
-          </article>
-        ))}
+                                <div className={styles.actions}>
+                                <button>👍 Like</button>
+                                <button>⭐ Interested</button>
+                                <button>↗ Share</button>
+                                </div>
+                            </article>
+                            ))}
 
                 </div>
             </Box>
