@@ -1,0 +1,34 @@
+.profilePage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    gap: 30px;
+}
+
+.pfp {
+    height: 100px;
+    width: 100px;
+}
+
+.firstRow {
+    display: flex;
+    gap: 20px;
+}
+
+.secondRow {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.button {
+    background-color: aliceblue;
+    color: black;
+    border-radius: 10px;
+}
+
+.button:hover {
+    background-color: antiquewhite;
+}
