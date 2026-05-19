@@ -1,7 +1,17 @@
 function Profile() {
+
     return (
         <>
-            Profile
+            <div>
+                <div>
+                    Name
+                    Following
+                </div>
+                <div>
+                    Description
+                    <button type="button">Edit</button>
+                </div>
+            </div>
         </>
     )
 };
