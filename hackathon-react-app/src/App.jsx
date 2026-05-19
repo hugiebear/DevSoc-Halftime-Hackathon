@@ -7,6 +7,7 @@ import Register from './Pages/Register'
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,7 +15,7 @@ function App() {
 
   useEffect(() => {
     const localToken = localStorage.getItem('token');
-    setToken(localToken);
+    setToken("test");
   }, []);
 
   const navigate = useNavigate();
@@ -34,6 +35,10 @@ function App() {
               <Link to="/events">
                 View Upcoming Events
               </Link>
+
+              <Button sx={{ ml: "auto"}} variant="contained" color="error">
+                Logout
+              </Button>
             </Toolbar>
           </AppBar>
         </Box>
