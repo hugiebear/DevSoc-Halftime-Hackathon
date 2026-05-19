@@ -28,6 +28,11 @@ function App() {
     console.log("redirect");
   }
 
+  const confirmLogout = () => {
+    setToken(null);
+    navigate('/login');
+  }
+
   return (
    <div>
     {token ? (
@@ -39,7 +44,7 @@ function App() {
               <Link to="/events">View Upcoming Events</Link>
               <Link to="/createsocietypage">Create a page for your society!</Link>
 
-              <Button sx={{ ml: "auto"}} variant="contained" color="error">
+              <Button sx={{ ml: "auto"}} variant="contained" color="error" onClick={confirmLogout}>
                 Logout
               </Button>
             </Toolbar>
