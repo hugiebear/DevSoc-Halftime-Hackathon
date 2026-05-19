@@ -7,7 +7,7 @@ import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField';
 
 function CreateSocietyEvent() {
-    const [eventName, setEvenmtName] = useState("");
+    const [eventName, setEventName] = useState("");
     const [eventDescription, setEventDescription] = useState(null);    
     const [eventTime, setEventTime] = useState("");
     const [eventDate, setEventDate] = useState("");
