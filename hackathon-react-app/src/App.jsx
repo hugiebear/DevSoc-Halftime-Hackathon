@@ -47,7 +47,9 @@ function App() {
                                 <Toolbar sx={{ display: "flex", justifyContent: "left", gap: 5 }}>
                                     <Link to="/events">View Upcoming Events</Link>
                                     <Link to="/createsocietypage">Create a page for your society!</Link>
-
+                                      {societyCreated && (
+                                        <Link to="/createsocietyevent">Create an event for your society!</Link>
+                                      )}
                                     <Link to="/profile/:id">View Profile</Link>
                                     <Button sx={{ ml: "auto" }} variant="contained" color="error" onClick={confirmLogout}>
                                         Logout
@@ -70,19 +72,8 @@ function App() {
             )}
 
     {
-      societyCreated && (
-        <Box>
-          <AppBar position='static'>
-            <Toolbar sx={{ display: "flex", justifyContent: "left", gap: 5}}>
-              <Link to="/createsocietyevent">Create an event for your society!</Link>
-            </Toolbar>
-          </AppBar>
-          
-        </Box>
-      )
+
     }
-
-
 
             <Routes>
                 <Route path="/login" element={<Login successCallback={fn} />} />
