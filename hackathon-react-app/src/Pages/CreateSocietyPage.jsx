@@ -6,11 +6,15 @@ import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField';
 
-function CreateSocietyPage() {
+function CreateSocietyPage(props) {
     const [societyName, setSocietyName] = useState("");
     const [societyPicture, setSocietyPicture] = useState(null);
     const [societyDescription, setSocietyDescription] = useState(null);
-
+    const navigate = useNavigate();
+    const createSociety = () => {
+        navigate('/events');
+        props.setSocietyCreated(true);
+    }
     return (
         <>
     <Box sx={{display: "flex", flexDirection: "column", justifyContent:"center", alignItems: "center", mt: 3, gap: 2,}}> 
@@ -47,7 +51,7 @@ function CreateSocietyPage() {
                 />
             </form>
 
-            <Button>Create Society Page</Button>
+            <Button onClick={createSociety}>Create Society Page</Button>
         </Box> 
         </>
     )
