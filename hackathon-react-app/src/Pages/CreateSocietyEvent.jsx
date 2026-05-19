@@ -42,6 +42,25 @@ function CreateSocietyEvent() {
             
             />      
 
+            <TextField
+                id="event-date" 
+                label="When is the event?" 
+                variant="outlined" 
+                value={eventDate} 
+                onChange={function (event) {setEventDate(event.target.value); }}
+                sx={{backgroundColor: "gray", borderRadius: 1, label: {colour: "white",}, input: {colour: "white",}, }}
+            
+            />      
+
+            <TextField
+                id="event-time" 
+                label="What time is the event?" 
+                variant="outlined" 
+                value={eventTime} 
+                onChange={function (event) {setEventTime(event.target.value); }}
+                sx={{backgroundColor: "gray", borderRadius: 1, label: {colour: "white",}, input: {colour: "white",}, }}
+            
+            />      
             <Button onClick={createEvent}>Create Event</Button>   
         </Box>
         </>

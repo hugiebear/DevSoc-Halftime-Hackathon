@@ -6,12 +6,13 @@ function Profile() {
         <>
             <div className={styles.profilePage}>
                 <img src={gif} className={styles.pfp}></img>
-                <div>Oliver Luan</div>
-                <div>Following: 999</div>
+                <div>John Smith</div>
+                <div>Following: DevSoc</div>
                 <div className={styles.secondRow}>
-                    Hates Niggers
-                    <button type="button" className={styles.button}>Edit Profile</button>
+                    I like Games and developing stuff
+                    
                 </div>
+                <button type="button" className={styles.button}>Edit Profile</button>
             </div>
         </>
     )

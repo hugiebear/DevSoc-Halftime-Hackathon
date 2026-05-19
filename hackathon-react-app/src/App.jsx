@@ -11,6 +11,7 @@ import Login from './Pages/Login'
 import Profile from './Pages/Profile'
 import Register from './Pages/Register'
 import CreateSocietyEvent from './Pages/CreateSocietyEvent'
+import ViewSocietyPage from './Pages/ViewSocietyPage'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -48,7 +49,11 @@ function App() {
                                     <Link to="/events">View Upcoming Events</Link>
                                     <Link to="/createsocietypage">Create a page for your society!</Link>
                                       {societyCreated && (
-                                        <Link to="/createsocietyevent">Create an event for your society!</Link>
+                                        <>
+                                          <Link to="/createsocietyevent">Create an event for your society!</Link>
+                                          <Link to="/viewsocietypage">View your society's page</Link>
+                                        </>
+                                        
                                       )}
                                     <Link to="/profile/:id">View Profile</Link>
                                     <Button sx={{ ml: "auto" }} variant="contained" color="error" onClick={confirmLogout}>
@@ -85,6 +90,7 @@ function App() {
                 <Route path="/createsocietypage" element={<CreateSocietyPage setSocietyCreated={setSocietyCreated}/>}/>
                 <Route path="/createsocietyevent" element={<CreateSocietyEvent/>}/>
                 <Route path="/profile/:id" element={<Profile />} />
+                <Route path="/viewsocietypage" element={<ViewSocietyPage/>}/>
 
             </Routes>
         </div>
