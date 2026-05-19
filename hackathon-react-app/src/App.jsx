@@ -21,8 +21,11 @@ function App() {
 
   const navigate = useNavigate();
 
-  function fn() {
+  function fn(token) {
+    localStorage.setItem('token', token);
+    setToken(token);
     navigate('/events')
+    console.log("redirect");
   }
 
   const confirmLogout = () => {
