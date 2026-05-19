@@ -4,6 +4,9 @@ import './App.css'
 import EventListings from './EventListings'
 import Login from './Pages/Login'
 import Register from './Pages/Register'
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import Box from '@mui/material/Box'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -25,16 +28,27 @@ function App() {
     {token ? (
       <>
       <nav>
-        <Link to="/events">
-          View Upcoming Events
-        </Link>
+        <Box>
+          <AppBar position='static'>
+            <Toolbar sx={{ display: "flex", justifyContent: "left", gap: 5}}>
+              <Link to="/events">
+                View Upcoming Events
+              </Link>
+            </Toolbar>
+          </AppBar>
+        </Box>
       </nav>      
       </>
     ) : (
-      <>
-        <Link to="/login">Login here!</Link>
-        <Link to="/register">Register here!</Link>
-      </>
+      <Box>
+          <AppBar position='static'>
+            <Toolbar sx={{ display: "flex", justifyContent: "left", gap: 5}}>
+              <Link to="/login">Login here!</Link>
+              <Link to="/register">Register here!</Link>
+            </Toolbar>
+          </AppBar>
+
+      </Box>
     )}
 
 
